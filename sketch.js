@@ -9,6 +9,20 @@ function setup() {
   buttons.push(b1);
   buttons.push(b2);
 
+
+}
+
+
+function mousePressed() {
+  for (let i = 0; i < buttons.length; i++) {
+    buttons[i].clicked(mouseX, mouseY);
+  }
+}
+
+function mouseReleased() {
+  for (let i = 0; i < buttons.length; i++) {
+    buttons[i].y = h/2;
+  }
 }
 
 function draw() {
@@ -36,10 +50,20 @@ class Button {
     noStroke();
     fill(this.c);
     rect((this.x - 100), this.y, this.w, this.h);
+
     fill(this.a);
     ellipse(this.x, this.y, this.w, this.h);
+
     fill(this.c);
     arc(this.x, (this.y + 40), this.w, this.h, TWO_PI, PI);
   }
 
+  clicked(px, py) {
+    let d = dist(px, py, this.x, this.y);
+
+    if (d < this.w / 2) {
+      this.y = this.y + 10;
+    } 
+  }
+    
 }
