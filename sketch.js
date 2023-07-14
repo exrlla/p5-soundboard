@@ -71,8 +71,6 @@ class Button {
       this.y = this.y + 10;
       this.song.play();
     } 
-
-    
   }
     
 }
