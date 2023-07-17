@@ -42,25 +42,25 @@ function draw() {
 }
 
 class Button {
-  constructor(x, y, w, h, c, a, song) {
+  constructor(x, y, w, h, color, accent, song) {
     this.x = x;
     this.y = y;
     this.w = w;
     this.h = h;
-    this.c = c;
-    this.a = a;
+    this.color = color;
+    this.accent = accent;
     this.song = song;
   }
 
   show() {
     noStroke();
-    fill(this.c);
+    fill(this.color);
     rect((this.x - 100), this.y, this.w, this.h);
 
-    fill(this.a);
+    fill(this.accent);
     ellipse(this.x, this.y, this.w, this.h);
 
-    fill(this.c);
+    fill(this.color);
     arc(this.x, (this.y + 40), this.w, this.h, TWO_PI, PI);
   }
 
