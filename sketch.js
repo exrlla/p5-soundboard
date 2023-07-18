@@ -1,6 +1,10 @@
 var w = window.innerWidth;
 var h = window.innerHeight;
-let buttons = [];
+
+let buttons_top = [];
+let buttons_middle = [];
+let buttons_bottom = [];
+
 let vine_boom;
 let retro_game;
 let whoosh;
@@ -19,39 +23,45 @@ function setup() {
 
 
 
-  let b1 = new Button(w/4, h/2, 200, 40, color(205,92,92), color(240,128,128), vine_boom);
-  let b2 = new Button(w/2, h/2, 200, 40, color(72,209,204), color(175,238,238), retro_game);
-  let b3 = new Button(w/4*3, h/2, 200, 40, color(255,215,0), color(255,255,0), whoosh);
+  let b1 = new Button(w/4, h/3, 200, 40, color(226, 132, 19), color(244, 190, 124), vine_boom);
+  let b2 = new Button(w/2, h/3, 200, 40, color(0, 159, 183), color(153, 241, 255), retro_game);
+  let b3 = new Button(w/4*3, h/3, 200, 40, color(145, 145, 233), color(204, 204, 245), whoosh);
 
-  let b4 = new Button(w/4, h/3, 200, 40, color(226, 132, 19), color(244, 190, 124), vine_boom);
-  let b5 = new Button(w/2, h/3, 200, 40, color(0, 159, 183), color(153, 241, 255), retro_game);
-  let b6 = new Button(w/4*3, h/3, 200, 40, color(145, 145, 233), color(204, 204, 245), whoosh);
+  let b4 = new Button(w/4, h/2, 200, 40, color(205,92,92), color(240,128,128), vine_boom);
+  let b5 = new Button(w/2, h/2, 200, 40, color(72,209,204), color(175,238,238), retro_game);
+  let b6 = new Button(w/4*3, h/2, 200, 40, color(255,215,0), color(255,255,0), whoosh);
 
   let b7 = new Button(w/4, 2*h/3, 200, 40, color(255, 163, 175), color(255, 214, 220), acute_guitar);
   let b8 = new Button(w/2, 2*h/3, 200, 40, color(143, 45, 86), color(216, 131, 166), guitar_string);
   let b9 = new Button(w/4*3, 2*h/3, 200, 40, color(236, 78, 32), color(234, 162, 133), guitar_notif);
   
-  buttons.push(b1);
-  buttons.push(b2);
-  buttons.push(b3);
-  buttons.push(b4);
-  buttons.push(b5);
-  buttons.push(b6);
-  buttons.push(b7);
-  buttons.push(b8);
-  buttons.push(b9);
+  buttons_top.push(b1);
+  buttons_top.push(b2);
+  buttons_top.push(b3);
+
+  buttons_middle.push(b4);
+  buttons_middle.push(b5);
+  buttons_middle.push(b6);
+
+  buttons_bottom.push(b7);
+  buttons_bottom.push(b8);
+  buttons_bottom.push(b9);
 }
 
 function mousePressed() {
-  for (let i = 0; i < buttons.length; i++) {
-    buttons[i].clicked(mouseX, mouseY);
+  for (let i = 0; i < buttons_top.length; i++) {
+    buttons_top[i].clicked(mouseX, mouseY);
+    buttons_middle[i].clicked(mouseX, mouseY);
+    buttons_bottom[i].clicked(mouseX, mouseY);
   }
 
 }
 
 function mouseReleased() {
-  for (let i = 0; i < buttons.length; i++) {
-    buttons[i].y = h/2;
+  for (let i = 0; i < buttons_top.length; i++) {
+    buttons_top[i].y = h/3;
+    buttons_middle[i].y = h/2;
+    buttons_bottom[i].y = 2*h/3;
   }
 }
 
@@ -59,8 +69,10 @@ function draw() {
   background(51, 92, 129);
   noStroke();
 
-  for (let i = 0; i < buttons.length; i++) {
-    buttons[i].show();
+  for (let i = 0; i < buttons_top.length; i++) {
+    buttons_top[i].show();
+    buttons_middle[i].show();
+    buttons_bottom[i].show();
   }
 }
 
