@@ -23,17 +23,17 @@ function setup() {
 
 
 
-  let b1 = new Button(width/3, height/3, 200, 40, color(226, 132, 19), color(244, 190, 124), vine_boom);
-  let b2 = new Button(width/2, height/3, 200, 40, color(0, 159, 183), color(153, 241, 255), retro_game);
-  let b3 = new Button(2*width/3, height/3, 200, 40, color(145, 145, 233), color(204, 204, 245), whoosh);
+  let b1 = new Button(width/3, height/3, 200, 80, color(226, 132, 19), color(244, 190, 124), vine_boom);
+  let b2 = new Button(width/2, height/3, 200, 80, color(0, 159, 183), color(153, 241, 255), retro_game);
+  let b3 = new Button(2*width/3, height/3, 200, 80, color(145, 145, 233), color(204, 204, 245), whoosh);
 
-  let b4 = new Button(width/3, height/2, 200, 40, color(205,92,92), color(240,128,128), vine_boom);
-  let b5 = new Button(width/2, height/2, 200, 40, color(72,209,204), color(175,238,238), retro_game);
-  let b6 = new Button(2*width/3, height/2, 200, 40, color(255,215,0), color(255,255,0), whoosh);
+  let b4 = new Button(width/3, height/2, 200, 80, color(205,92,92), color(240,128,128), vine_boom);
+  let b5 = new Button(width/2, height/2, 200, 80, color(72,209,204), color(175,238,238), retro_game);
+  let b6 = new Button(2*width/3, height/2, 200, 80, color(255,215,0), color(255,255,0), whoosh);
 
-  let b7 = new Button(width/3, 2*height/3, 200, 40, color(255, 163, 175), color(255, 214, 220), acute_guitar);
-  let b8 = new Button(width/2, 2*height/3, 200, 40, color(143, 45, 86), color(216, 131, 166), guitar_string);
-  let b9 = new Button(2*width/3, 2*height/3, 200, 40, color(236, 78, 32), color(234, 162, 133), guitar_notif);
+  let b7 = new Button(width/3, 2*height/3, 200, 80, color(255, 163, 175), color(255, 214, 220), acute_guitar);
+  let b8 = new Button(width/2, 2*height/3, 200, 80, color(143, 45, 86), color(216, 131, 166), guitar_string);
+  let b9 = new Button(2*width/3, 2*height/3, 200, 80, color(236, 78, 32), color(234, 162, 133), guitar_notif);
   
   buttons_top.push(b1);
   buttons_top.push(b2);
@@ -89,13 +89,13 @@ class Button {
   show() {
     noStroke();
     fill(this.color);
-    rect((this.x - 100), this.y, this.w, this.h);
+    rect((this.x - 100), this.y, this.w, 50);
 
     fill(this.accent);
     ellipse(this.x, this.y, this.w, this.h);
 
     fill(this.color);
-    arc(this.x, (this.y + 40), this.w, this.h, TWO_PI, PI);
+    arc(this.x, (this.y + 50), this.w, this.h, TWO_PI, PI);
   }
 
   clicked(px, py) {
