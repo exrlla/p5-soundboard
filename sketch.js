@@ -76,14 +76,14 @@ function draw() {
 }
 
 class Button {
-  constructor(x, y, w, h, color, accent, song) {
+  constructor(x, y, w, h, color, accent, sound) {
     this.x = x;
     this.y = y;
     this.w = w;
     this.h = h;
     this.color = color;
     this.accent = accent;
-    this.song = song;
+    this.sound = sound;
   }
 
   show() {
@@ -103,7 +103,7 @@ class Button {
 
     if (d < this.w / 2) {
       this.y = this.y + 10;
-      this.song.play();
+      this.sound.play();
     } 
   }
     
